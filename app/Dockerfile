@@ -10,7 +10,7 @@ RUN groupadd sshgroup && usermod -aG sshgroup user && mkdir /var/run/sshd
 RUN echo 'root:N0tRequ1r3d' | chpasswd && echo 'user:V@nyaUv01eN' | chpasswd
 COPY ./sshd_config /etc/ssh/sshd_config
 RUN mkdir /home/user/.ssh \
-    && echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDhZgdSFMi+HwijNU1bQBCJN1ecF7AeZ4/YoALdNQ8mTDITP15Y3Ld5jb2ZIelZ+20QQEdwImQKyNMJDhBduIh6Xz+J9C1b2NLEA6nK1gU/+HR1R+fJ6O3OShVxV9/ItJrPEb+rY/P7OK6Feyi8p7UXgH1M8I7RsJJNQ69XiAoJbaO5+jCQPG2EqDgBBSzLGLf05KE3OyOOnNROEqnyZHX/HC6frgtZGMfNm3Hk+aEkIoRI8Pag0HQAphnBdIcJzokjfAVmzoDT+3EjhkXXec/1mUd4ckD1aJ3MMnx2h8fJHp9lIl9EjNcX+YJaISoX1BdCwbWihAhfRv27ZTnWd9JQ0bj6wVj4WfGDjIODOVrx0EB6dlbpBAOvczXxpG8BeYRSBBjy1mW5cDjZQr96ZB0rp2j8P8oTf3H9VFXQV0fOilZOVYlspXnLG2RdpDEjV//KUpkNDCgfAQOcEh/VKUaQZV+PxR4DpBB+y4Qtw6nqSxr6TnnEslZ/3vz3TOieis8= kali@kali' > /home/user/.ssh/authorized_keys \
+    && echo ''ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD4JkpGL8WyGguNzUI6dNlTLEG1loCwAu4QhtDSLYSaZq+5uN6yRJcd7PVZ0gFRFFYGmhn9VFsSwSx37qn9Gl5evcHxVEjHGY1Z1VGDImXOQEz97/n7x+DmFKMvX5uXBh7D6rxFxDy8BCrjzPoLuz2fC1DLUqqVJSssBfdSxNHaENaVwsQ2T2HDCU61cnvacke/tFLCvp3LjAIR05mPPSzTTLBTDcrKxZEc4JNDMeu309szh0I65QJw5kQE72+3fVV92KbV3hQoz1hWhaQy/cemDlu8zQTA5zXIFXdfqP3A11CnOXabKhca1Vcy7fxpUb9gqvMed/NbphJ4HDgppBj/htc+vkH/cLF6htXKL4490VVRGOqLs56KiFr8iI9wN4u2v2M/jb/PHmIBQSxQtW1klJ7rNp69K+qyaWVXk13d9H03a+iTYKFPBmgD25jOZv79AsDzXa+Us/oaicmnjv9aDmM16LLxSMz0WJnrpeIzGU39NKtu6zhhrdahAFKx5q0= kali@kali > /home/user/.ssh/authorized_keys \
     && service ssh start 
 # Key would be replaced to encrypted
 

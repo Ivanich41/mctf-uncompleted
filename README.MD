@@ -4,6 +4,6 @@
 - ~~Doas and Cron~~
 - ~~Flag permissions~~
 - ~~Garbage cleaner~~
-- SSH passphrase 
-- Tests
+- ~~SSH passphrase~~
+- ~~Tests~~
 - Writeup
