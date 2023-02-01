@@ -2,7 +2,8 @@
 ## TODO
 - ~~ssh~~
 - ~~Doas and Cron~~
-- Flag permissions 
+- ~~Flag permissions~~
+- ~~Garbage cleaner~~
 - SSH passphrase 
 - Tests
 - Writeup

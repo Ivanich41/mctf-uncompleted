@@ -1,4 +1,4 @@
-ROM ubuntu:22.04
+FROM ubuntu:22.04
 
 # Installs
 RUN apt-get update  \
@@ -15,14 +15,15 @@ RUN mkdir /home/user/.ssh \
 # Key would be replaced to encrypted
 
 # Cron 
-RUN adduser --disabled-password --gecos "" cronuser && (echo 'cronuser:11111' | chpasswd )
+RUN adduser --disabled-password --gecos "" cronuser && (echo 'cronuser:W0r1d0F1LLu51oN' | chpasswd )
 
 # Doas
 RUN echo "permit nopass user as cronuser cmd crontab args -e" > /etc/doas.conf
 
 # General
 RUN chmod u-s $(which passwd)
-RUN echo "mctf{cR0n_F1@g_L3aK}" > /home/cronuser/flag && chown root /home/cronuser/flag && chmod 444 /home/cronuser/flag 
+RUN echo "mctf{cR0n_F1@g_L3aK}" > /home/cronuser/.flag && chown root:cronuser /home/cronuser/ \
+    && chmod 1775 /home/cronuser/ && chown root /home/cronuser/.flag 
 
 # Startup
 EXPOSE 22

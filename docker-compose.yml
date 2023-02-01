@@ -17,7 +17,7 @@ services:
       - "2022:22"
     labels:
       ofelia.enabled: "true"
-      ofelia.job-exec.rmgarbage.schedule: "@every 1m"
+      ofelia.job-exec.rmgarbage.schedule: "@every 5m"
       ofelia.job-exec.rmgarbage.command: sh -c 'rm -rf /tmp/* && rm -rf /home/user/*'
     healthcheck:
       test: ["CMD", "socat", "TCP4:localhost:22", "-"]
