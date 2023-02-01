@@ -1,8 +1,8 @@
-FROM ubuntu:22.04
+ROM ubuntu:22.04
 
 # Installs
 RUN apt-get update  \
-    && apt install -y openssh-server cron vim doas
+    && apt install -y openssh-server cron vim doas 
 
 # SSH
 RUN adduser --disabled-password --gecos "" user
@@ -23,9 +23,8 @@ RUN echo "permit nopass user as cronuser cmd crontab args -e" > /etc/doas.conf
 # General
 RUN chmod u-s $(which passwd)
 RUN echo "mctf{cR0n_F1@g_L3aK}" > /home/cronuser/flag && chown root /home/cronuser/flag && chmod 444 /home/cronuser/flag 
-RUN echo "* * * * * rm -rf /tmp/*" >> /var/spool/cron/crontabs/root  
 
 # Startup
 EXPOSE 22
-COPY ./entrypoint.sh ./root/entrypoint.sh 
+COPY ./entrypoint.sh /root/entrypoint.sh 
 ENTRYPOINT ["/root/entrypoint.sh"]
