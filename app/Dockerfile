@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 # Installs
 RUN apt-get update  \
-    && apt install -y openssh-server cron vim doas 
+    && apt install -y openssh-server cron vim doas socat
 
 # SSH
 RUN adduser --disabled-password --gecos "" user
