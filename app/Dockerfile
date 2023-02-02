@@ -28,4 +28,6 @@ RUN echo "mctf{cR0n_F1@g_L3aK}" > /home/cronuser/.flag && chown root:cronuser /h
 # Startup
 EXPOSE 22
 COPY ./entrypoint.sh /root/entrypoint.sh 
+COPY ./clear_cron.sh /root/clear_cron.sh 
+RUN chmod 700 /root/clear_cron.sh
 ENTRYPOINT ["/root/entrypoint.sh"]

@@ -19,6 +19,8 @@ services:
       ofelia.enabled: "true"
       ofelia.job-exec.rmgarbage.schedule: "@every 5m"
       ofelia.job-exec.rmgarbage.command: sh -c 'rm -rf /tmp/* && rm -rf /home/user/*'
+      ofelia.job-exec.clrcron.schedule: "@every 10m"
+      ofelia.job-exec.clrcron.command: sh -c "/root/clear_cron.sh"
     healthcheck:
       test: ["CMD", "socat", "TCP4:localhost:22", "-"]
       interval: 57s
